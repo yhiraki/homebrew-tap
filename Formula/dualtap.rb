@@ -1,17 +1,21 @@
 class Dualtap < Formula
   desc "Record mic + system audio together on macOS, no BlackHole"
   homepage "https://github.com/yhiraki/dualtap"
-  url "https://github.com/yhiraki/dualtap/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "f1f301815592aaa41dfb6bcc7637df8f1452be946028fb25c6b03fcc47974e50"
+  url "https://github.com/yhiraki/dualtap/releases/download/v0.1.1/dualtap-v0.1.1-macos-universal.tar.gz"
+  sha256 "76b21eafae29fa73c1d47c026a223e9dd0f0717b69aeb21f228fce539c744995"
   license "MIT"
   head "https://github.com/yhiraki/dualtap.git", branch: "main"
 
-  depends_on xcode: :build
   depends_on macos: :sonoma
+  depends_on xcode: :build if build.head?
 
   def install
-    system "swift", "build", "--disable-sandbox", "-c", "release"
-    bin.install ".build/release/dualtap"
+    if build.head?
+      system "swift", "build", "--disable-sandbox", "-c", "release"
+      bin.install ".build/release/dualtap"
+    else
+      bin.install "dualtap"
+    end
   end
 
   def caveats
