@@ -1,8 +1,8 @@
 class Dualtap < Formula
   desc "Record mic + system audio together on macOS, no BlackHole"
   homepage "https://github.com/yhiraki/dualtap"
-  url "https://github.com/yhiraki/dualtap/releases/download/v0.1.3/dualtap-v0.1.3-macos-universal.tar.gz"
-  sha256 "c49c7a6a19b92b5d1fd742351fc99bc8c8abe5b308612fc1102a02158ac37082"
+  url "https://github.com/yhiraki/dualtap/releases/download/v0.1.4/dualtap-v0.1.4-macos-universal.tar.gz"
+  sha256 "f108a9f57dc1dc16e96cbcc99424144d7615518ff9f566d725bb08f439dc118a"
   license "MIT"
   head "https://github.com/yhiraki/dualtap.git", branch: "main"
 
